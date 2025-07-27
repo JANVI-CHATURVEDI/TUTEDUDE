@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* index.css */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 25s linear infinite;
+}
+
+
+
+@keyframes moveTruck {
+  0%   { left: 0%; }
+  60%  { left: 45%; }
+  100% { left: 45%; }
+}
+
+@keyframes moveToDelivered {
+  from { left: 45%; }
+  to { left: 90%; }
+}
+
+.animate-initial {
+  animation: moveTruck 300s linear forwards;
+}
+
+.animate-to-end {
+  animation: moveToDelivered 2s forwards !important;
+}
