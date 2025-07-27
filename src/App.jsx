@@ -7,18 +7,20 @@ import TrackOrder from "./pages/TrackOrder";
 import Wallet from "./pages/Wallet";
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
+import SearchAllProducts from "./pages/SearchAllProducts";
 import './index.css';
 
 function App() {
   return (
     <Routes>
-      <Route path="/login" element={<Login />} />
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Login />} />
+      <Route path="/vendor/home" element={<Home />} />
       <Route path="/product/:id" element={<SingleProductPageWrapper />} />
       <Route path="/vendor-profile" element={<VendorProfile />} />
       <Route path="/vendor/track" element={<TrackOrder />} />
       <Route path="/vendor/wallet" element={<Wallet />} />
       <Route path="/vendor/cart" element={<Cart />} />
+      <Route path="/search" element={<SearchAllProducts />} />
     </Routes>
   );
 }

@@ -59,7 +59,7 @@ const Wallet = () => {
 
         <div className="text-center mt-8">
           <Link
-            to="/"
+            to="/vendor/home"
             className="bg-[#9A68F8] text-white px-6 py-2 rounded-lg shadow hover:bg-[#7455C6] transition"
           >
             Back to Home

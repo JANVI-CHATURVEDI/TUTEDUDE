@@ -1,15 +1,38 @@
 import { Link } from "react-router-dom";
-import { products } from "../data/products.js";
+import { products as allProducts } from "../data/products.js";
 
-const ProductCard = () => {
+const ProductCard = ({ data, limit }) => {
+  // Decide what products to show: from props or all
+  let itemsToShow = data || allProducts;
+
+  // Apply limit if passed
+  if (limit) {
+    itemsToShow = itemsToShow.slice(0, limit);
+  }
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 mt-6">
-      {products.map((item) => (
+      {itemsToShow.map((item) => (
         <Link
-          to={`/product/${item.id}`}  // use product.id instead of index
+          to={`/product/${item.id}`}
           key={item.id}
-          className="bg-[#9b83e3] rounded-xl shadow-md p-4 transition-transform hover:scale-105 hover:shadow-xl duration-200"
+          className="relative bg-[#9b83e3] rounded-xl shadow-md p-4 transition-transform hover:scale-105 hover:shadow-xl duration-200"
         >
+          {/* Verified Badge */}
+          {item.verified && (
+            <div className="absolute top-2 right-2 bg-white text-blue-600 border border-blue-500 px-2 py-[2px] text-[11px] font-semibold rounded-full shadow flex items-center gap-1 z-10">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-3.5 w-3.5 text-blue-600"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+              </svg>
+              Verified
+            </div>
+          )}
+
           <img
             src={`${item.img}?w=300&h=200&fit=crop`}
             alt={item.name}

@@ -18,7 +18,7 @@ export default function Login() {
     localStorage.setItem("isLoggedIn", "true");
 
     // Redirect to homepage
-    navigate("/");
+    navigate("/vendor/home");
   };
 
   return (

@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 const TrackOrder = () => {
   const truckRef = useRef(null);
@@ -11,7 +12,10 @@ const TrackOrder = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-between items-center bg-gradient-to-br from-[#f0ebfd] to-[#e8e0f8] font-sans px-4">
+    <>
+    <Navbar />
+    <div className="min-h-[90vh] flex flex-col justify-between items-center bg-gradient-to-br from-[#f0ebfd] to-[#e8e0f8] font-sans px-4">
+      
       <div className="mt-12 text-center w-full max-w-4xl">
         <h2 className="text-2xl font-semibold text-[#1C1E38]">Track Your Order</h2>
 
@@ -61,6 +65,7 @@ const TrackOrder = () => {
         Simulated 10-minute delivery animation. Click "Delivered" to complete.
       </p>
     </div>
+    </>
   );
 };
 

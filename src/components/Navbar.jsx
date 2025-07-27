@@ -70,26 +70,32 @@ const Navbar = () => {
             {/* Menu Items */}
             <div className="flex flex-col gap-4">
               <Link
+                to="/vendor/home"
+                className="flex items-center gap-3 bg-[#e3e3e8] text-[#1C1E38] px-5 py-3 rounded-xl font-medium text-lg hover:bg-[#b39ce5] hover:text-[#7455C6] transition transform hover:scale-[1.02]"
+              >
+                🏠 <span>Home</span>
+              </Link>
+              <Link
                 to="/vendor/track"
-                className="flex items-center gap-3 bg-[#e3e3e8] text-[#1C1E38] px-5 py-3 rounded-xl font-medium text-lg hover:bg-[#564280] hover:text-[#7455C6] transition transform hover:scale-[1.02]"
+                className="flex items-center gap-3 bg-[#e3e3e8] text-[#1C1E38] px-5 py-3 rounded-xl font-medium text-lg hover:bg-[#b39ce5] hover:text-[#7248e3] transition transform hover:scale-[1.02]"
               >
                 📍 <span>Track Order</span>
               </Link>
               <Link
                 to="/payment"
-                className="flex items-center gap-3 bg-[#e3e3e8] text-[#1C1E38] px-5 py-3 rounded-xl font-medium text-lg hover:bg-[#564280] hover:text-[#7455C6] transition transform hover:scale-[1.02]"
+                className="flex items-center gap-3 bg-[#e3e3e8] text-[#1C1E38] px-5 py-3 rounded-xl font-medium text-lg hover:bg-[#b39ce5] hover:text-[#7455C6] transition transform hover:scale-[1.02]"
               >
                 💳 <span>Payments</span>
               </Link>
               <Link
                 to="/vendor/wallet"
-                className="flex items-center gap-3 bg-[#e3e3e8] text-[#1C1E38] px-5 py-3 rounded-xl font-medium text-lg hover:bg-[#564280] hover:text-[#7455C6] transition transform hover:scale-[1.02]"
+                className="flex items-center gap-3 bg-[#e3e3e8] text-[#1C1E38] px-5 py-3 rounded-xl font-medium text-lg hover:bg-[#b39ce5] hover:text-[#7455C6] transition transform hover:scale-[1.02]"
               >
                 👛 <span>Wallet</span>
               </Link>
               <Link
                 to="/vendor-profile"
-                className="flex items-center gap-3 bg-[#e3e3e8] text-[#1C1E38] px-5 py-3 rounded-xl font-medium text-lg hover:bg-[#564280] hover:text-[#7455C6] transition transform hover:scale-[1.02]"
+                className="flex items-center gap-3 bg-[#e3e3e8] text-[#1C1E38] px-5 py-3 rounded-xl font-medium text-lg hover:bg-[#b39ce5] hover:text-[#7455C6] transition transform hover:scale-[1.02]"
               >
                 👤 <span>Profile</span>
               </Link>

@@ -1,4 +1,6 @@
 import { useRef, useState } from "react";
+import Navbar from "../components/Navbar";
+import { useNavigate } from "react-router-dom";
 
 export default function VendorProfile() {
   const [photo, setPhoto] = useState("https://i.pravatar.cc/100?img=4");
@@ -31,10 +33,15 @@ export default function VendorProfile() {
 
   const saveProfile = () => setIsEditing(false);
 
+  const navigate = useNavigate();
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#9A68F8] to-[#9d8eb9] text-white px-4">
-      <div className="bg-white/10 backdrop-blur border border-[#dcd7ea] shadow-xl rounded-2xl p-4 max-w-sm w-full flex flex-col items-center">
-        <h2 className="text-lg font-bold mb-2">Profile</h2>
+    <>
+    <Navbar />
+    <div className="min-h-[89vh] flex items-center justify-center bg-gradient-to-br text-black from-[#9A68F8] to-[#9d8eb9] text-white px-4">
+     
+      <div className="bg-white/10 backdrop-blur border border-[#dcd7ea] text-black shadow-xl rounded-2xl p-4 max-w-sm w-full flex flex-col items-center">
+        <h2 className="text-3xl font-bold mb-2">Profile</h2>
 
         <div className="flex gap-4 items-center w-full">
           <div className="relative w-[70px] h-[70px]">
@@ -77,21 +84,21 @@ export default function VendorProfile() {
             ) : (
               <>
                 <h2 className="text-base font-semibold">{name}</h2>
-                <p className="text-xs text-[#e3d9ff] mt-1">Vendor ID: {vendorId}</p>
+                <p className="text-xs text-black mt-1">Vendor ID: {vendorId}</p>
               </>
             )}
 
             <div className="mt-2">
               {isEditing ? (
                 <button
-                  className="bg-[#7455C6] text-white text-xs px-3 py-1 rounded"
+                  className="bg-[#7455C6] text-black text-xs px-3 py-1 rounded"
                   onClick={saveProfile}
                 >
                   Save
                 </button>
               ) : (
                 <button
-                  className="border border-[#dcd7ea] text-[#e3d9ff] text-xs px-3 py-1 rounded hover:bg-[#dcd7ea] hover:text-white"
+                  className="border border-[#dcd7ea] text-black text-xs px-3 py-1 rounded hover:bg-[#dcd7ea] hover:text-white"
                   onClick={enableEdit}
                 >
                   Edit
@@ -108,24 +115,25 @@ export default function VendorProfile() {
               {isEditing ? (
                 <input
                   type="text"
-                  className="w-full text-sm bg-white/10 border border-[#dcd7ea] rounded px-2 py-1 mt-1 text-white"
+                  className="w-full text-sm bg-white/10 border border-[#dcd7ea] rounded px-2 py-1 mt-1 text-black"
                   value={value}
                   onChange={(e) => handleFieldChange(key, e.target.value)}
                 />
               ) : (
-                <div className="text-sm text-[#e3d9ff] mt-1">{value}</div>
+                <div className="text-sm text-black mt-1">{value}</div>
               )}
             </div>
           ))}
         </div>
 
         <button
-          onClick={() => alert("Going back to Home Page...")}
+          onClick={() => navigate("/")}
           className="mt-2 text-sm px-4 py-1 border border-[#dcd7ea] rounded hover:bg-[#dcd7ea] hover:text-white"
         >
           ← Back to Home
         </button>
       </div>
     </div>
+                </>
   );
 }

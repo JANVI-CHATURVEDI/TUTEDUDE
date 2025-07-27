@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import Navbar from "../components/Navbar";
 const Cart = () => {
   const [cartItems, setCartItems] = useState([
     {
@@ -35,10 +35,13 @@ const Cart = () => {
   const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
-    <div className="min-h-screen bg-[#262848] text-white flex flex-col items-center p-8">
-      <h1 className="text-3xl font-semibold text-[#9A68F8] mb-6">🛒 Your Cart</h1>
+    <>
+    <Navbar />
+    <div className="min-h-[90vh] bg-[#9d8fdb] text-white flex flex-col items-center p-8">
       
-      <div className="w-full max-w-3xl bg-[#3A2D5F]/70 p-6 rounded-xl shadow-lg">
+      <h1 className="text-3xl font-semibold text-[#150e22] mb-6">🛒 Your Cart</h1>
+      
+      <div className="w-full max-w-3xl bg-[#7164ad] p-6 rounded-xl shadow-lg">
         {cartItems.length === 0 ? (
           <p className="text-center text-gray-300">Your cart is empty.</p>
         ) : (
@@ -84,11 +87,12 @@ const Cart = () => {
           ))
         )}
 
-        <div className="text-right text-lg font-semibold text-[#9A68F8] mt-6">
+        <div className="text-right text-lg font-semibold text-[#24104a] mt-6">
           Total: ₹{total}
         </div>
       </div>
     </div>
+    </>
   );
 };
 

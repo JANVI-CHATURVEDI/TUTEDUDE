@@ -11,12 +11,9 @@ const Home = () => {
       <OfferSlider />
       <SearchBar />
 
-      <div className="p-4 max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold mb-4 mr-4">Top Products</h2>
-        <ProductCard />
-      </div>
+      
 
-      <div className="p-4 max-w-7xl mx-auto">
+      <div className="p-4 max-w-7xl mx-auto mt-5">
         <h2 className="text-3xl font-bold mb-2 mr-4">Top Suppliers</h2>
         <SupplierCard />
       </div>
