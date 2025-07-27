@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "../assets/logo.png"
+import logo from "../assets/logo.png";
 
 export default function Login() {
   const [role, setRole] = useState("Supplier");
@@ -17,8 +17,12 @@ export default function Login() {
     localStorage.setItem("userEmail", email);
     localStorage.setItem("isLoggedIn", "true");
 
-    // Redirect to homepage
-    navigate("/vendor/home");
+    // Redirect based on role
+    if (role === "Vendor") {
+      navigate("/vendor/home");
+    } else {
+      navigate("/supplier/dashboard");
+    }
   };
 
   return (
@@ -26,9 +30,9 @@ export default function Login() {
       <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md text-center">
         <div className="mb-4">
           <img
-            src={logo} 
+            src={logo}
             alt="Vendify Logo"
-            className="w-24 mx-auto "
+            className="w-24 mx-auto"
           />
         </div>
 
